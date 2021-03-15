@@ -1,0 +1,251 @@
+
+
+
+body {
+	margin: 100px;
+	padding: 0;
+	background:  #111;
+	font-family: 'Quicksand', sans-serif;
+}
+h1{
+	float: left;
+	
+	margin-left: 150px;
+	color:aqua;
+	text-overflow: clip;
+}
+.happy h2{
+	float: right;
+	color: pink;
+	
+}
+p{
+	font-size: 26px;
+}
+.container{
+	max-width: 1000px;
+	margin: 100px auto;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	float: left;
+
+}
+.card{
+	position: relative;
+	margin: 20px 0;
+	margin-left: 30px;
+	width: 300px;
+	height: 400px;
+	background: #fff;
+	transform-style: preserve-3d;
+	transform: perspective(2000px);
+	transition: 1s;
+	box-shadow: inset 300px 0 50px rgba(0,0,0,.5);
+
+}
+.card:hover{
+	z-index: 1000;
+	transform: perspective(2000px) rotate(-10deg);
+	box-shadow: inset 20px 0 50px rgba(0,0,0,.5);
+}
+.card .imgbox{
+	position: relative;
+	width: 100%;
+	height: 100%;
+	border: 1px solid rgb(234, 248, 241);
+	box-sizing: border-box;
+	transform-origin: left;
+	z-index: 1;
+	transition: 1s;
+
+
+}
+.card:hover .imgbox{
+	transform: rotateY(-135deg);
+}
+.card .imgbox .img{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	
+}
+
+
+.card .details
+{
+  position: absolute;
+  top: 0;
+  left: 0;
+  box-sizing: border-box;
+  padding: 20px;
+}
+
+
+#slider-main,
+#slider-item {
+	position: relative;
+	display: flex;
+	
+	margin: auto;
+	transform-style: preserve-3d;
+	transform: rotateX(-10deg);
+	
+}
+
+#slider-main img {
+	transform-style: preserve-3d;
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	line-height: 200px;
+	font-size: 50px;
+	text-align: center;
+	box-shadow: 0 0 8px 5px #111;
+	border-radius: 12px;
+	transition: all .2s linear;
+	box-reflect: below 10px linear-gradient(transparent, transparent, #0005);
+	-webkit-box-reflect: below 10px linear-gradient(transparent, transparent, #0005);
+	-moz-box-reflect: below 10px linear-gradient(transparent, transparent, #0005);
+	-o-box-reflect: below 10px linear-gradient(transparent, transparent, #0005);
+}
+
+#slider-main img:hover {
+	box-reflect: below 10px linear-gradient(transparent, transparent, #0007);
+	-webkit-box-reflect: below 10px linear-gradient(transparent, transparent, #0007);
+	-moz-box-reflect: below 10px linear-gradient(transparent, transparent, #0007);
+	-0-box-reflect: below 10px linear-gradient(transparent, transparent, #0007);
+}
+
+#slider-main p {
+	font-family: Serif;
+	position: absolute;
+	top: 100%;
+	left: 50%;
+	transform: translate(-50%, -50%) rotateX(90deg);
+	color: #fff;
+	font-size: 34px;
+}
+
+#ground {
+	width: 900px;
+	height: 900px;
+	position: absolute;
+	top: 100%;
+	left: 50%;
+	transform: translate(-50%, -50%) rotateX(90deg);
+	background: -webkit-radial-gradient(center center, farthest-side, #9993, transparent);
+}
+
+#music-container {
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: none;
+}
+
+
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700');
+#surprise{
+	margin: 0;
+	padding: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh; 
+	background-image: url(image/namaz.jpg);
+	background-position: center;
+	background-size: cover;
+	font-family: 'Poppins', sans-srif;
+	text-align: center;
+}
+
+input[type="checkbox"]
+{
+	-webkit-appearance: none;
+}
+.check{
+	position: relative;
+	display: inline-block;
+	width: 40px;
+	height: 20px;
+	background: #111;
+	border-radius: 20px;
+}
+.check:before{
+	content: '';
+	position: absolute;
+	top: 1px;
+	left: 1px;
+	width: 18px;
+	height: 18px;
+	background: #444;
+	border-radius: 50%;
+	transition: 0.5s;
+}
+input[type="checkbox"]:checked ~ .check:before
+{
+	transform: translateX(30px);
+	background: #14f960;
+}
+.check:after{
+	content: 'LOVE YOU MOUSUMI';
+	position: absolute;
+	right: -210px;
+	top: -1px;
+	font-size: 20px;
+	color: white;
+	opacity: 0;
+	transition: 0.5s;
+	transform: translateX(20px);
+}
+input[type="checkbox"]:checked ~ .check:after
+{
+  opacity: 1;
+  transform: translateX(0px);
+}
+label h2{
+	margin: 0;
+	padding: 0;
+	color: #111;
+	background: linear-gradient(90deg, rgb(255, 244, 255), 
+		transparent);
+	background-size: 200%;
+	background-position-x: 200%;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-repeat: no-repeat;
+	transition: 5s;
+	font-weight: 700;
+}
+input[type="checkbox"]:checked ~ h2
+{
+	transition-delay: 0.5s;
+	background-position-x: 0;
+}
+
+
+@keyframes spin {
+	from {
+		transform: rotateY(0deg);
+	}
+
+	to {
+		transform: rotateY(360deg);
+	}
+}
+
+@keyframes spinRevert {
+	from {
+		transform: rotateY(360deg);
+	}
+
+	to {
+		transform: rotateY(0deg);
+	}
+}
